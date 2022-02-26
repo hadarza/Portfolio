@@ -95,14 +95,80 @@
    }
 }
 
+.svg-basic {
+    @include flex;
+    width: 70%;
+    height:70%;
+}
+
 .app_navbar_menu{
     width: 35px;
     height: 35px;
     border-radius: 50%;
     position:relative;
-    right: 8vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $gray_hover;
+    right: 3em;
+   @include flex;
+    background-color: $red;
+
+    svg{
+        color: white;
+       @include flex;
+       width: 70%;
+       height:70%;
+
+    }
+
+    div{
+        position: fixed;
+        top:0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+        padding: 1rem;
+        width:70%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        background: url('../../src/assets/bgWhite.png');
+        background-color: $white;
+        background-size: cover;
+        background-repeat: repeat;
+
+        box-shadow: 0 0 20px rgba(168,168,168,0.15);
+        
+
+        svg{
+            position: absolute;
+            right: 3.5rem;
+            top: 3rem;
+            color: black;
+            @include flex;
+            width: 6%;
+            height: 6%;
+            margin: 0em 0.5rem;
+        }
+
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            margin:0;
+            width:100%;
+
+            li{
+                margin: 1rem;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        display: none;
+    }
 }
