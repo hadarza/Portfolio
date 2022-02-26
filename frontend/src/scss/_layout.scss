@@ -1,0 +1,108 @@
+/*there are the styles for the header, footer, the grid system, etc*/
+
+@import './base';
+@import './styles';
+
+*{
+    font-family: $font-family;
+}
+.app_navbar{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(60, 60, 60, 0.08);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.18);
+    position:fixed;
+    z-index: 2;
+}
+
+.app_navbar_logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img{
+        width:150px;
+        height: auto;
+
+        @media screen and (max-width:500px) {
+            width:120px;
+            height:auto;
+        }
+        @media screen and (min-width:2000px) {
+            width:180px;
+            height:auto;
+        }
+    }
+}
+
+%flex{
+    @include flex;
+}
+
+.flex{
+    @extend %flex;
+}
+.app_navbar_links{
+    flex: 1;
+    @media screen and (min-width:900px) {
+        @include flex;
+    }
+
+
+   li{
+    font-size: 1.2rem;
+
+       padding: 2rem;
+       cursor:pointer;
+       flex-direction: column;
+
+       div{
+           width:5px;
+           height:5px;
+           background: transparent;
+           border-radius: 50%;
+           margin-bottom: 5px;  
+           
+          
+       }
+
+       a{
+           color: $gray;
+           text-decoration: none;
+           flex-direction: column;
+           font-weight: 600;
+           transition: all 0.3s ease-in-out;
+
+           &:hover{
+               color: $gray_hover;
+           }
+        }
+        &:hover{
+            div{
+                background: $gray_hover;
+            }
+        }
+   }
+
+   @media screen and (max-width: 900px) {
+       display: none;
+   }
+}
+
+.app_navbar_menu{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position:relative;
+    right: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $gray_hover;
+}

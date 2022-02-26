@@ -1,0 +1,120 @@
+/*contains all the resets, variables, mixins, and utility classes*/
+/*colors*/
+/*there are the styles for the header, footer, the grid system, etc*/
+/*contains all the resets, variables, mixins, and utility classes*/
+/*colors*/
+/*styles for every component necessary for that project, including buttons, modals, etc.*/
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  font-family: "Noto Sans Hebrew";
+}
+
+.app_navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(60, 60, 60, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  z-index: 2;
+}
+
+.app_navbar_logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.app_navbar_logo img {
+  width: 150px;
+  height: auto;
+}
+@media screen and (max-width: 500px) {
+  .app_navbar_logo img {
+    width: 120px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 2000px) {
+  .app_navbar_logo img {
+    width: 180px;
+    height: auto;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app_navbar_links {
+  flex: 1;
+}
+@media screen and (min-width: 900px) {
+  .app_navbar_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.app_navbar_links li {
+  font-size: 1.2rem;
+  padding: 2rem;
+  cursor: pointer;
+  flex-direction: column;
+}
+.app_navbar_links li div {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+.app_navbar_links li a {
+  color: #6b7688;
+  text-decoration: none;
+  flex-direction: column;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.app_navbar_links li a:hover {
+  color: #000000;
+}
+.app_navbar_links li:hover div {
+  background: #000000;
+}
+@media screen and (max-width: 900px) {
+  .app_navbar_links {
+    display: none;
+  }
+}
+
+.app_navbar_menu {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: relative;
+  right: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+/*styles for every component necessary for that project, including buttons, modals, etc.*/
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=app.css.map */
