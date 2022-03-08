@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Noto Sans Hebrew', 'sans-serif']
+        families: ['Noto Sans Hebrew', 'sans-serif', 'Smooch Sans']
       }
     });
    }, []);

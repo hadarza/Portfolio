@@ -5,22 +5,29 @@ export default{
     fields:[
         {
             name:'title',
-            title:'Title',
+            title:'title',
             type:'string'
         },
         {
-            name:'description',
-            title:'Description',
+            name:'desctiption',
+            title:'desctiption',
             type:'string'
         },
         {
-            name:'imgUrl',
-            title:'ImgUrl',
+            name:'background',
+            title:'background',
             type: 'image',
-            options: {
-              hotspot: true,
-            },
         },
+        {
+            name:'icon',
+            title:'icon',
+            type: 'image',
+        },
+        {
+            name:'colorful',
+            title:'colorful',
+            type:'string'
+        }
         
     ]
 }

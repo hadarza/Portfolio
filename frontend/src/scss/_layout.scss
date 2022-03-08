@@ -4,7 +4,33 @@
 @import './styles';
 
 *{
-    font-family: $font-family;
+    font-family: $font-family-english;
+}
+
+
+.english{
+    font-size: 1.7rem;
+
+
+    @media screen and (max-width: 1201px) and (min-width: 450px){
+        font-size: 1.5rem !important;
+    }
+    @media screen and (max-width:450px) {
+        font-size: 1.2rem !important;
+        
+    }
+}
+
+.englishBig{
+    font-size: 2.6rem !important;
+    @media screen and (max-width: 900px) and (min-width: 450px){
+        font-size: 1.6rem !important;
+    }
+    @media screen and (max-width:450px) {
+        font-size: 1.5rem !important;
+        
+    }
+
 }
 .app_navbar{
     width: 100%;
@@ -106,7 +132,7 @@
     height: 35px;
     border-radius: 50%;
     position:relative;
-    right: 3em;
+    right: 4em;
    @include flex;
     background-color: $red;
 
@@ -141,8 +167,8 @@
 
         svg{
             position: absolute;
-            right: 3.5rem;
-            top: 3rem;
+            right: 5rem;
+            top: 2rem;
             color: black;
             @include flex;
             width: 6%;
@@ -172,3 +198,378 @@
         display: none;
     }
 }
+
+/*Header*/
+
+#home{
+
+    .app__wrapper{
+        padding:0;
+
+        .copyright{
+            display: none;
+        }
+    }
+}
+
+.app__header{
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    width: 100%;
+    height:100%;
+
+    @media screen and (min-width:2000px) {
+        width:100%;
+        padding-top: 12rem;
+    }
+    @media screen and(max-width:1200px) and (min-width:900px){
+        padding-top:12rem;
+    }
+    @media screen and (max-width:900px) and (min-width:450px){
+        flex-direction: row;
+    }
+    @media screen and (max-width:450px){
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-top: 0rem ;
+    }
+}
+
+.img-me{
+    width: 23rem;
+    border-radius: 50%;
+
+    @media screen and (max-width: 900px) and (min-width:450px){
+        width: 20rem;
+    }
+    @media screen and (max-width: 600px) and (min-width:450px){
+        width:14rem;
+    }
+    @media  screen and (max-width:450px) {
+        width:11rem;
+    }
+}
+
+.app__header__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height:100%;
+
+    @media screen and (max-width:2000px) {
+        margin-right: 0rem;
+        
+    }
+}
+
+.app-header-badge{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge-cmp , .tag-cmp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $white;
+    width: auto;
+    border-radius: 15px;
+    padding: 0rem 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+   
+
+    @media screen and (max-width: 450px) {
+        padding:0.5rem 0.5rem;
+    }
+    >span{
+        font-size: 3rem;
+
+        @media screen and (max-width: 900px) and (min-width: 450px){
+            font-size: 2rem;
+        }
+        @media screen and (max-width: 450px) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.badge-cmp{
+    margin-left: 1rem;
+}
+
+.tag-cmp{
+    height:5rem;
+    margin-top: 1.5rem;
+    @media screen and (max-width: 450px) {
+        height: 2rem;
+    }
+
+    @media screen and (max-width: 900px) and (min-width:450px) {
+        height: 4rem !important;
+    }
+}
+
+/* circles on header*/
+.circle-cmp > img{
+    width: 70%;
+    height: 70%;
+}
+.circle-cmp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0 , 0 , 0, 0.3);
+    margin: 1rem;
+}
+
+.app__header-circles{
+    margin-left: 5rem;
+    > div:nth-child(1){
+        width: 5rem;
+        height: 5rem;
+    }
+    >div:nth-child(2){
+        width: 8rem;
+        height: 8rem;
+    }
+    >div:nth-child(3){
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    @media screen and (max-width:900px) {
+        display: none;
+    }
+}
+
+/*About me */
+.AboutMe-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .AboutMe__title{
+        margin-bottom: 0.5rem;
+    }
+    h2{
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+        padding: 0 25rem 0;
+        @media screen and (min-width: 900px) and (max-width:1200px){
+            padding:0 8rem 0;
+        }
+        @media screen and (min-width:450px) and (max-width:900px){
+            padding : 0 3.5rem 0;
+        }
+        @media screen and (max-width:450px) {
+            padding: 0 1rem 0;
+        }
+    }
+    h2 span{
+        color: $red;
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+
+    #line{
+        width:4rem;
+        height:0.01rem;
+        
+        border-top: 0.1rem solid $red;
+    }
+}
+
+button{
+    width: 9rem;
+    height: 4rem;
+    font-size: 1.3rem;
+    margin: 1rem;
+    border-radius: 75px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border: none;
+}
+
+@mixin btnStyle1{
+    background: white;
+    color: $pink;
+    border: 1px solid $pink;
+}
+
+@mixin btnStyle2 {
+    background: $pink;
+    color:white;
+
+}
+
+.email-btn{
+   @include btnStyle2;
+    a {
+        text-decoration: none;
+        color:white;
+    }
+
+    &:hover{
+        cursor:pointer;
+        @include btnStyle1;
+        a{
+            color: $pink;
+        }
+    }
+}
+
+.cv-btn{
+    @include btnStyle1;
+
+    &:hover{
+        cursor: pointer;
+        @include btnStyle2;
+    }
+}
+
+/*Box context*/
+.box-Image{
+    width: 70%;
+    @extend .flex;
+    flex-wrap: wrap;
+
+    >div{
+        border-radius: 20px;
+        position:relative;
+        width: 12rem;
+        height:8rem;
+        padding: 2rem 4rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 1rem 1rem;
+
+
+        .colorful-div{    
+            border-radius: 20px;
+            opacity: 0.9;
+            position: absolute;
+            top:0rem;
+            right:0rem;
+            width:100%;
+            height:100%;
+
+            .card-info{
+                display: flex;
+                align-items: center;
+            }
+        }
+        img{
+            padding:1rem;
+            width: 3rem;
+            height:auto;
+        }        
+        h1{
+            text-align: center;
+        }
+    }
+}
+.app__profile-items:nth-child(4) > div > div > img{
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+/*App wrapper*/
+.app__container{
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    @include flex;
+}
+
+.app__wrapper {
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+    padding: 4rem 2rem;
+  
+    @media screen and (max-width: 450px) {
+      padding: 4rem 1rem 2rem;
+    }
+  }
+
+.copyright{
+    width: 100%;
+    padding: 2rem 0 0;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.app_social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 4rem;
+  
+    div {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $white;
+      margin: 0.25rem 0;
+      border: 1px solid $gray;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      transition: all 0.3s ease-in-out;
+  
+      svg {
+        width: 15px;
+        height: 15px;
+        color: $gray;
+      }
+  
+      &:hover {
+        background-color: $gray_hover;
+        border-color: $gray;
+  
+        svg {
+          color: $white;
+        }
+      }
+  
+      @media screen and (min-width: 2000px) {
+        width: 70px;
+        height: 70px;
+  
+        margin: 0.5rem 0;
+  
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .app__navigation,
+    .app_social {
+      display: none;
+    }
+  
+    .copyright {
+      padding: 2rem;
+    }
+  }
