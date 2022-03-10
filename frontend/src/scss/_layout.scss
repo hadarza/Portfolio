@@ -6,6 +6,13 @@
 *{
     font-family: $font-family-english;
 }
+.app{
+    background: rgb(237,241,247);
+}
+
+html{
+    scroll-behavior: smooth;
+}
 
 
 .english{
@@ -162,8 +169,7 @@
         background-size: cover;
         background-repeat: repeat;
 
-        box-shadow: 0 0 20px rgba(168,168,168,0.15);
-        
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;        
 
         svg{
             position: absolute;
@@ -201,7 +207,7 @@
 
 /*Header*/
 
-#home{
+#Home{
 
     .app__wrapper{
         padding:0;
@@ -353,17 +359,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 5rem;
 
-    .AboutMe__title{
-        margin-bottom: 0.5rem;
-    }
     h2{
         text-align: center;
     }
 
     h2{
         text-align: center;
-        padding: 0 25rem 0;
+        padding: 0 15rem 0;
         @media screen and (min-width: 900px) and (max-width:1200px){
             padding:0 8rem 0;
         }
@@ -376,16 +380,18 @@
     }
     h2 span{
         color: $red;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         font-weight: 300;
     }
+}
 
-    #line{
-        width:4rem;
-        height:0.01rem;
-        
-        border-top: 0.1rem solid $red;
-    }
+
+#line{
+    margin: auto;
+    width:4rem;
+    height:0.01rem;
+    
+    border-top: 0.1rem solid $red;
 }
 
 button{
@@ -437,16 +443,16 @@ button{
 
 /*Box context*/
 .box-Image{
-    width: 70%;
-    @extend .flex;
+    width: 100%;
+    @include flex;
     flex-wrap: wrap;
 
     >div{
         border-radius: 20px;
         position:relative;
         width: 12rem;
-        height:8rem;
-        padding: 2rem 4rem;
+        height: 4.5rem;
+        padding: 3rem 3.5rem;
         background-size: cover;
         background-repeat: no-repeat;
         margin: 1rem 1rem;
@@ -484,7 +490,6 @@ button{
 /*App wrapper*/
 .app__container{
     width: 100%;
-    height: 100vh;
     min-height: 100vh;
     display: flex;
     flex-direction: row;
@@ -517,16 +522,15 @@ button{
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    height: 100%;
-    padding-bottom: 4rem;
+    padding-top : 38rem;
   
     div {
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background-color: $white;
+      background-color: $light_gray;
       margin: 0.25rem 0;
-      border: 1px solid $gray;
+      border: 1px solid $white;
   
       display: flex;
       justify-content: center;
@@ -541,8 +545,9 @@ button{
       }
   
       &:hover {
-        background-color: $gray_hover;
-        border-color: $gray;
+        background-color: $gray;
+        border-color: $white;
+        cursor: pointer;
   
         svg {
           color: $white;
@@ -563,6 +568,34 @@ button{
     }
 }
 
+.app__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    padding: 1rem;
+  
+    .app__navigation__dots {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #cbcbcb;
+      margin: 0.5rem;
+  
+      transition: background-color 0.2s ease-in-out;
+  
+      &:hover {
+        background-color: $gray;
+      }
+  
+      @media screen and (min-width: 2000px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+}
+
 @media screen and (max-width: 500px) {
     .app__navigation,
     .app_social {
@@ -573,3 +606,123 @@ button{
       padding: 2rem;
     }
   }
+
+  .h1-title{
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  /*Work*/
+.item-active{
+    background-color: $light_gray !important;
+}
+  .App_Work_Filter{
+      @include flex;
+
+      >div{
+          padding: 0.7rem 1.5rem;
+          margin: 1rem;
+          border-radius: 30px;
+          background-color: $white;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+            font-weight: 600;
+          @media screen and (max-width:600px) {
+            padding: 0.7rem 1.1rem;
+          }
+
+          &:hover{
+            background-color: $gray;
+            color:white;
+
+          }
+      }
+  }
+
+.app__work-item{
+    background-color: $white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin:1rem;
+
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+}
+
+.app__work-portfolio{
+    @include flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.app__work-img{
+    position:relative;
+    margin: 1rem;
+    object-fit: cover;
+    >img{
+        border-radius: 10px;
+        width: 230px;
+        height: 200px;
+    }
+}
+
+
+.app__work-hover{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    opacity: 0;
+    @include flex;
+    div{
+        margin:1rem;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 40px;
+        width: 3rem;
+        height: 3rem;
+        transition: all 0.3s ease;
+        
+    }
+    svg{
+        color:white;
+        width:50%;
+        height:50%;
+        cursor: pointer;
+    }
+}
+
+.app__work-content{
+    text-align: center;
+}
+
+.bold_text{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.app__work-tag{
+    @include flex;
+    background-color: aliceblue;
+    border-radius: 80px;
+    width: 35%;
+    height: 90%;
+    margin: auto auto;
+    >p{
+        font-weight: 600;
+    }
+    
+}
+
+.tags-section{
+    height: 2.5rem;
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+}

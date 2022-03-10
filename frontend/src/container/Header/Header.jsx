@@ -62,4 +62,4 @@ const scaleVariants = {
   )
 }
 
-export default AppWrap(Header,'home')
+export default AppWrap(Header,'Home')
