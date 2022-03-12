@@ -1,6 +1,6 @@
 import React from 'react'
 import BoxContext from '../../Components/BoxContext/BoxContext'
-import { AppWrap } from '../../wrapper'
+import { AppWrap , MotionWrap } from '../../wrapper'
 const about = () => {
   return (
     <div className="AboutMe-section">
@@ -20,4 +20,4 @@ const about = () => {
   )
 }
 
-export default AppWrap(about,'About')
+export default AppWrap(MotionWrap(about,'app__about'),'About')

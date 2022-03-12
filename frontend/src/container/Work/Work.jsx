@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {AiFillGithub,AiFillEye} from 'react-icons/ai'
 import { motion } from 'framer-motion'
-import { AppWrap } from '../../wrapper'
+import { AppWrap , MotionWrap } from '../../wrapper'
 import { urlFor , client } from '../../client'
 const Work = () => {
 const [activeFilter, setactiveFilter] = useState('All')
@@ -18,16 +18,18 @@ useEffect(() => {
 }, [])
 
   const handleFilterWorks = (item) =>{
-    setactiveFilter(item);
-    console.log(item + " , "+ activeFilter)
-    setanimatedCard([{y:100,opacity:0}])
+    if(activeFilter !== item){
+      setactiveFilter(item);
+      console.log(item + " , "+ activeFilter)
+      setanimatedCard([{y:100,opacity:0}])
 
-    setTimeout(() => {
-      setanimatedCard({y:0,opacity:1})
-      if(item === "All")
-        setfilterWork(Works)
-      else setfilterWork(Works.filter((work)=> work.tags.includes(item)))
-    }, 500);
+      setTimeout(() => {
+        setanimatedCard({y:0,opacity:1})
+        if(item === "All")
+          setfilterWork(Works)
+        else setfilterWork(Works.filter((work)=> work.tags.includes(item)))
+      }, 500);
+    }
   }
   return (
     <> 
@@ -99,4 +101,4 @@ useEffect(() => {
   )
 }
 
-export default AppWrap(Work,'Work')
+export default AppWrap(MotionWrap(Work,'app__works'),'Work')

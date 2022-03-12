@@ -2,10 +2,13 @@
 
 @import './base';
 @import './styles';
-
+body{
+    margin: 0;
+}
 *{
     font-family: $font-family-english;
 }
+
 .app{
     background: rgb(237,241,247);
 }
@@ -16,7 +19,7 @@ html{
 
 
 .english{
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
 
 
     @media screen and (max-width: 1201px) and (min-width: 450px){
@@ -30,6 +33,9 @@ html{
 
 .englishBig{
     font-size: 2.6rem !important;
+    @media screen and (max-width: 1201px) and (min-width: 900px){
+        font-size: 1.8rem !important;
+    }
     @media screen and (max-width: 900px) and (min-width: 450px){
         font-size: 1.6rem !important;
     }
@@ -208,7 +214,9 @@ html{
 /*Header*/
 
 #Home{
-
+    @media screen and (max-width:900px){
+        padding-top:5rem;
+    }
     .app__wrapper{
         padding:0;
 
@@ -218,9 +226,13 @@ html{
     }
 }
 
+.copyright{
+    display: none !important;
+}
+
 .app__header{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 5rem;
     width: 100%;
     height:100%;
@@ -238,7 +250,7 @@ html{
     @media screen and (max-width:450px){
         flex-direction: row;
         justify-content: flex-start;
-        padding-top: 0rem ;
+        padding-top: 4rem ;
     }
 }
 
@@ -247,10 +259,10 @@ html{
     border-radius: 50%;
 
     @media screen and (max-width: 900px) and (min-width:450px){
-        width: 20rem;
+        width: 17rem;
     }
     @media screen and (max-width: 600px) and (min-width:450px){
-        width:14rem;
+        width:12rem;
     }
     @media  screen and (max-width:450px) {
         width:11rem;
@@ -294,7 +306,9 @@ html{
     }
     >span{
         font-size: 3rem;
-
+        @media screen and (max-width: 1201px) and (min-width: 900px){
+            font-size: 2.5rem;
+        }
         @media screen and (max-width: 900px) and (min-width: 450px){
             font-size: 2rem;
         }
@@ -336,7 +350,6 @@ html{
 }
 
 .app__header-circles{
-    margin-left: 5rem;
     > div:nth-child(1){
         width: 5rem;
         height: 5rem;
@@ -359,7 +372,6 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 5rem;
 
     h2{
         text-align: center;
@@ -494,16 +506,19 @@ button{
     display: flex;
     flex-direction: row;
     @include flex;
+    @media screen and (max-width:600px) {
+        min-height:auto;
+    }
 }
 
 .app__wrapper {
     flex: 1;
     width: 100%;
     flex-direction: column;
-    padding: 4rem 2rem;
+    padding-top: 4rem;
   
-    @media screen and (max-width: 450px) {
-      padding: 4rem 1rem 2rem;
+    @media screen and (max-width: 600px) {
+      padding: 0rem;
     }
   }
 
@@ -523,6 +538,7 @@ button{
     align-items: center;
     flex-direction: column;
     padding-top : 38rem;
+    padding-left: 0.5rem;
   
     div {
       width: 30px;
@@ -573,9 +589,8 @@ button{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  
-    padding: 1rem;
-  
+    margin: 1rem;
+
     .app__navigation__dots {
       width: 10px;
       height: 10px;
@@ -596,14 +611,14 @@ button{
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .app__navigation,
     .app_social {
       display: none;
     }
   
     .copyright {
-      padding: 2rem;
+      margin: 2rem;
     }
   }
 
@@ -613,10 +628,17 @@ button{
   }
 
   /*Work*/
+
+  .app__works{
+    padding-top: 5rem;
+    flex-direction: column;
+  }
 .item-active{
-    background-color: $light_gray !important;
+    color:$white;
+    background-color: $cherry !important;
 }
   .App_Work_Filter{
+      margin-top: 1rem;
       @include flex;
 
       >div{
@@ -629,10 +651,11 @@ button{
             font-weight: 600;
           @media screen and (max-width:600px) {
             padding: 0.7rem 1.1rem;
+            margin:0.4rem;
           }
 
           &:hover{
-            background-color: $gray;
+            background-color: $cherry;
             color:white;
 
           }
@@ -725,4 +748,296 @@ button{
     display: flex;
     width: 100%;
     margin-bottom: 2rem;
+}
+/*Skills*/
+
+.app__skills{
+    padding-top: 5rem;
+    flex-direction: column;
+}
+
+.app__skills-container{
+    padding-top: 4rem;
+    width:100%;
+    display: flex;
+
+    @media screen and (max-width:900px){
+        flex-direction: column;
+    }
+
+}
+
+.app__skills-list{
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    @media screen and (max-width:900px){
+        justify-content: center;
+    }
+}
+
+.App__work-list{
+    flex:1.5;
+}
+
+.App__skills-item{
+    @include flex;
+    flex-direction: column;
+    padding: 0rem 2.6rem;
+    transition: all 0.3s ease-in-out;
+    @media screen and (max-width: 1600px) and (min-width:1201px){
+        padding: 0.5rem 2.2rem;
+    }
+    @media screen and (min-width:900px) and (max-width:1201px){
+        padding: 0.5rem 0.8rem;
+    }
+
+    @media screen and (max-width:900px){
+        padding: 0.5rem;
+    }
+
+    @media screen and (max-width:600px){
+        padding: 0.3rem;
+    }
+   
+    >div{
+        border-radius: 50%;
+        width:85px;
+        height:85px;
+
+        @media screen and (max-width:1201px) and (min-width:900px){
+            width:77px;
+            height:77px;
+        }
+
+        @media screen and (max-width:900px) and (min-width:600px){
+            width:70px;
+            height:70px;
+        }
+        @media screen and (max-width:600px) {
+            width:55px;
+            height:55px;
+        }
+        >img{
+            width:50%;
+            height:50%;
+        }
+    }
+}
+
+.circle{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 1rem;
+    left: 9.35rem;
+    right: 0;
+    bottom: 0;
+    background: black;
+    border-radius: 50%;
+   
+}
+
+.app__work-list{
+    flex:1.2;
+}
+.app__skills-exp-item{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.app__skills-exp-year{
+    margin-left: 1rem;
+    width:150px;
+    font-size: 1.3rem;
+    padding-top: 0.5rem;
+}
+.App__skills-exp-work{
+    border-left: 3px solid black;
+    opacity: 1;
+    >h4,>p{
+    padding-left: 2rem;
+    }
+}
+.bold_text{
+    font-weight: 600;
+}
+
+.workName{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    color: $cherry;
+}
+/*Testmonials*/
+.app__testmonial-item{
+    background-color: $white;
+    width: 30rem;
+    height: 18rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 3rem;
+    @include flex;
+
+    @media screen and (max-width:900px) {
+        width: 85%;
+        height:15rem;
+    }
+
+    img{
+        width:20%;
+        margin-right: 1.5rem;
+    }
+
+}
+
+.app__testmonials{
+    padding-top: 2rem;
+    flex-direction: column;
+}
+
+.app__testmonial-content{
+    height:80%;
+    width:70%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    >div {
+        flex: 1;
+        >h4{
+            color: $red;
+            font-size: 1.5rem;
+            margin: auto;
+        }
+        >h5{
+            font-weight: 500;
+            margin:0.1rem;
+        }
+    }
+}
+
+.feedback{
+    flex:2;
+    font-size: 1.8rem;
+}
+.app__testmonial-btns{
+    display: flex;
+    justify-content: space-between;
+    width: 7rem;
+    >div{
+        width:45px;
+        height:45px;
+        border-radius: 50%;
+        background-color: $white;
+        &:hover{
+            background-color: $light_gray;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;;
+        }
+        >svg{
+            width:1.5rem;
+            height:auto;
+        }
+    }
+}
+
+.app__Footer{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Footer*/
+.app__Footer{
+padding-top: 4rem;
+}
+.app__footer_cards{
+    @include flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 55%;
+    @media screen and (max-width:1201px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+    }
+
+}
+.app__footer_card{
+    min-width: 250px;
+    padding: 1.5rem 0rem;
+    background: $white;
+    border-radius: 5px;
+    @include flex;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+
+    &:hover{
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    >img{
+        width: 3rem;
+        height: auto;
+    }
+    >a{
+        text-decoration: none;
+        color: black;
+        padding-left: 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+.app__footer-forms{
+    @include flex;
+    flex-direction: column;
+    width: 40%;
+
+    @media screen and (max-width:1201px) {
+        width: 60%;
+    }
+    @media screen and (max-width: 900px) {
+        width: 70%;
+    }
+    >div {
+        width:100%;
+        margin: 1rem 0;
+        transition: all 0.3s ease-in-out;
+        > input, >textarea{
+            width: 100%;
+            height: 3rem;
+            padding-left: 0.8rem;
+            background-color: #cbcbcb;
+            border-radius: 7px;
+            border:none;
+            font-size: 1.2rem;
+            outline: none;
+
+        }
+        textarea{
+            padding-top: 0.8rem;
+            height:120px;
+            resize: none;
+        }
+    }
+    
+}
+
+.submitBtn{
+    background-color: $cherry;
+    border-radius: 30px !important;
+    margin-bottom: 1rem;
+    height: 3.5rem;
+    &:hover{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background-color: $red;
+        color:$white;
+    }
+}
+
+.head-text{
+    font-size: 3rem;
 }

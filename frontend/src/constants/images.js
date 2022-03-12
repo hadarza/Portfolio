@@ -13,8 +13,8 @@ import devloper from '../assets/devloper.png'
 import design from '../assets/design.png'
 import phone from '../assets/phone_icon.png'
 import game from '../assets/game.png'
-
-
+import email from '../assets/email.png'
+import mobile from '../assets/mobile.png'
 export default{
     logo,
     prom,
@@ -30,5 +30,7 @@ export default{
     devloper,
     design,
     phone,
-    game
+    game,
+    email,
+    mobile
 }

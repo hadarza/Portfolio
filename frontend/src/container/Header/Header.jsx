@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import {images} from '../../constants'
-import { AppWrap } from '../../wrapper'
+import { AppWrap , MotionWrap } from '../../wrapper'
 
 const Header = () => {
 
@@ -41,7 +41,7 @@ const scaleVariants = {
             </div>
 
             <div className="tag-cmp">
-              <p className="p-text english"> I'M A WEB DEVELOPER</p>
+              <p className="english"> I'M A WEB DEVELOPER</p>
             </div>
           </div>
         </motion.div>
@@ -62,4 +62,4 @@ const scaleVariants = {
   )
 }
 
-export default AppWrap(Header,'Home')
+export default AppWrap(MotionWrap(Header,'app__home'),'Home')
