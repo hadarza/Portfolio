@@ -1,5 +1,5 @@
 import logo from '../assets/logo.png'
-import prom from '../assets/prom.jpg'
+import me from '../assets/me.jpeg'
 import circle from '../assets/circle.svg'
 import node from '../assets/node.png'
 import git from '../assets/git.png'
@@ -17,7 +17,7 @@ import email from '../assets/email.png'
 import mobile from '../assets/mobile.png'
 export default{
     logo,
-    prom,
+    me,
     circle,
     node,
     git,

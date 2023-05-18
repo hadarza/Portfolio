@@ -3,7 +3,7 @@ import {About,Footer,Header,Skills,Testmonial,Work} from './container'
 import {NavBar} from './Components'
 import './scss/Application.scss'
 import WebFont from 'webfontloader';
-
+import video from './assets/video.mov'
 function App() {
 
   useEffect(() => {

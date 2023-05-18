@@ -24,7 +24,7 @@ const scaleVariants = {
         <motion.div
           whileInView={{opacity:[0,1]}}
           transition={{duration:1,delayChildren:0.5}}>
-          <img className="img-me" src={images.prom} alt="imgOfMe"/>
+          <img className="img-me" src={images.me} alt="imgOfMe"/>
 
           </motion.div>
         <motion.div

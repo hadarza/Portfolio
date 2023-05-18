@@ -219,6 +219,7 @@ html{
     }
     .app__wrapper{
         padding:0;
+       
 
         .copyright{
             display: none;
@@ -516,6 +517,14 @@ button{
     width: 100%;
     flex-direction: column;
     padding-top: 4rem;
+    >div{
+        opacity: 1;
+        display: flex;
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
   
     @media screen and (max-width: 600px) {
       padding: 0rem;
@@ -957,7 +966,7 @@ padding-top: 4rem;
     @include flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 55%;
+    width: 70%;
     @media screen and (max-width:1201px) {
         width: 80%;
     }
@@ -993,8 +1002,8 @@ padding-top: 4rem;
 
 .app__footer-forms{
     @include flex;
+    width:100%;
     flex-direction: column;
-    width: 40%;
 
     @media screen and (max-width:1201px) {
         width: 60%;
@@ -1003,7 +1012,8 @@ padding-top: 4rem;
         width: 70%;
     }
     >div {
-        width:100%;
+        
+        width:50%;
         margin: 1rem 0;
         transition: all 0.3s ease-in-out;
         > input, >textarea{
